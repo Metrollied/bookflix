@@ -1,4 +1,4 @@
-let library;
+let library = [];
 console.log(sessionStorage.getItem("storedLibrary"))
 
 const libraryArea = document.getElementById('library');
@@ -57,10 +57,12 @@ function remove(e) {
         if (e.target.classList.item(0) == arrayItem.id) {
             document.getElementById("book" + e.target.classList.item(0)).remove();
             a = library.indexOf(e.target.classList.item(0));
-            library.splice(a, 1)
+            library.splice(a -1, 1)
+            sessionStorage.setItem("storedLibrary", JSON.stringify(library))
+            return
         }
     })
-    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
+    
 
 
 }
