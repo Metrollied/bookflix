@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
+    <title>Bookflix</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+    </style>
+
+</head>
+
+<body>
+    <div id="workingArea">
+        <div id="header">Bookflix</div>
+        <form id="bookForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="bookTitle">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="bookAuthor">
+            <label for="pages">Pages:</label>
+            <input type="number" id="pages" name="bookPages">
+            <label for="read">Read:</label>
+            <input type="checkbox" id="read" name="readBook">
+            <input type="submit" id="submit" name="addBook" value="Submit">
+        </form>
+        <button id="deleteAll">Reset</button>
+    </div>
+    <div id="library">
+
+    </div>
+    <div id="footer">&copy; Oliver Crawford</div>
+</body>
+
+</html>

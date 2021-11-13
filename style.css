@@ -1,0 +1,143 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: cadetblue;
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    margin-left: 0;
+    margin-bottom: 0;
+    background-image: linear-gradient(#020024, #090979, #00d4ff);
+    background-attachment: fixed;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+}
+
+#header {
+    font-size: 75px;
+    border-bottom: solid 5px white;
+    margin-bottom: 20px;
+    width: 100vw;
+    margin-left: 0;
+    text-align: center;
+    padding:  20px 0px;
+    font-weight: bold;
+    color: white;
+    
+
+}  
+#library {
+    margin: 15px;
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+    
+}
+
+.book {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-size: 30px;
+    width: 220px;
+    height: auto;
+    text-align: center;
+    padding: 10px;
+    gap: 10px;
+    border-image-slice: 27 27 27 27;
+    border-image-width: 10px 10px 10px 10px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: stretch stretch;
+    border-image-source: url(./wallpaper/border.png);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 3px;
+    font-weight: bold;
+    text-shadow: 2px 2px 3px black;
+}
+
+.delete {
+    font-weight: 900;
+    width: 110px;
+    height: auto;
+    color: white;
+    background-color: rgb(156, 18, 18);
+    border: solid white 3px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 3px black;
+}
+
+
+.unRead, .read {
+    width: 110px;
+    height: 30px;
+    font-size: 20px;
+    margin: 0px;
+    border: solid white 3px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 4px black;
+
+}
+
+.unRead {
+    background-color: rgb(189, 37, 37);
+}
+
+.read {
+    background-color: green;
+}
+
+#workingArea {
+    display: flex;
+    flex-direction: column;
+}
+
+#bookForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+#footer {
+    color: black;
+    border-top: solid 5px white;
+    width: 99vw;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    font-weight: 200;
+    background-color: white;
+    margin-bottom: 0px;
+    padding: 5px;
+}
+
+#deleteAll, #submit {
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    align-self: center;
+    font-weight: 900;
+    border: solid white 3px;
+    border-radius: 10px;
+    background: transparent;
+    font-size: 16px;
+}
