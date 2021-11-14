@@ -1,5 +1,12 @@
-let library = [];
-console.log(sessionStorage.getItem("storedLibrary"))
+
+if (sessionStorage.getItem("storedLibrary")) {
+    library = JSON.parse(sessionStorage.getItem("storedLibrary"))
+}
+else {
+    let library;
+    library = [];
+    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
+}
 
 const libraryArea = document.getElementById('library');
 document.getElementById('submit').addEventListener('click', addBookToLibrary);
@@ -53,26 +60,20 @@ function unRead(e) {
 }
 
 function remove(e) {
-    library.forEach(function (arrayItem) {
-        if (e.target.classList.item(0) == arrayItem.id) {
-            document.getElementById("book" + e.target.classList.item(0)).remove();
-            a = library.indexOf(e.target.classList.item(0));
-            library.splice(a -1, 1)
-            sessionStorage.setItem("storedLibrary", JSON.stringify(library))
-            return
-        }
-    })
-    
-
-
+    console.log(e.target.classList.item(0))
+    document.getElementById("book" + e.target.classList.item(0)).remove();
+    a = library.findIndex(x => x.id == e.target.classList.item(0));
+    console.log(a)
+    library.splice(a, 1)
+    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
 }
+
 
 function addBookToLibrary(e) {
     e.preventDefault();
     y = Date.now();
     let book = new Book(y, document.getElementById('title').value, document.getElementById('author').value, document.getElementById('pages').value, document.getElementById('read').checked)
     library.push(book);
-    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
     displayBook(book);
 }
 
@@ -105,4 +106,5 @@ function displayBook(arrayItem) {
     libraryArea.appendChild(bookDisplay);
     bookDisplay.appendChild(btn2);
     bookDisplay.appendChild(btn1);
+    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
 }
