@@ -1,16 +1,24 @@
-
-if (sessionStorage.getItem("storedLibrary")) {
-    library = JSON.parse(sessionStorage.getItem("storedLibrary"))
-}
-else {
-    let library;
-    library = [];
-    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
-}
-
 const libraryArea = document.getElementById('library');
 document.getElementById('submit').addEventListener('click', addBookToLibrary);
 document.getElementById('deleteAll').addEventListener('click', reset);
+
+let library = JSON.parse(sessionStorage.getItem("storedLibrary"));
+if (sessionStorage.getItem("storedLibrary")) {
+    console.log("True")
+    library.forEach(function (arrayItem) {
+        displayBook(arrayItem)
+    } )
+}
+else {
+    console.log("False")
+    library = [];
+    
+    sessionStorage.setItem("storedLibrary", JSON.stringify(library))
+    
+
+}
+
+
 
 function reset() {
     sessionStorage.clear()
@@ -33,11 +41,9 @@ function Book(id, title, author, pages, read) {
     this.read = read
 }
 
-library.forEach(function (arrayItem) {
-    displayBook(arrayItem)
-}
 
-)
+
+
 
 function unRead(e) {
     library.forEach(function (arrayItem) {
